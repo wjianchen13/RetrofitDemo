@@ -11,5 +11,8 @@ https://www.jianshu.com/p/edbcce26957d
 Retrofit使用教程（一）- Retrofit入门详解
 https://blog.csdn.net/gdutxiaoxu/article/details/52745491
 
+Retrofit2初体验——以请求wanandroid接口为例
+https://blog.csdn.net/qq_42391904/article/details/100533368
+
 
 

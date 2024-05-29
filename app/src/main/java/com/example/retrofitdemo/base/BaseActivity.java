@@ -25,6 +25,7 @@ import retrofit2.Response;
 
 /**
  * Retrofit 入门
+ * https://blog.csdn.net/qq_42391904/article/details/100533368
  */
 public class BaseActivity extends AppCompatActivity {
 

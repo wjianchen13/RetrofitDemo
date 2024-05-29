@@ -7,6 +7,9 @@ import retrofit2.http.HTTP;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
+/**
+ * https://blog.csdn.net/qq_42391904/article/details/100533368
+ */
 public interface WanAndroidService {
 
     /**
