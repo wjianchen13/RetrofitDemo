@@ -14,5 +14,7 @@ https://blog.csdn.net/gdutxiaoxu/article/details/52745491
 Retrofit2初体验——以请求wanandroid接口为例
 https://blog.csdn.net/qq_42391904/article/details/100533368
 
+Android 主流开源框架（四）Retrofit 使用详解
+https://juejin.cn/post/6844903978518478855
 
 
