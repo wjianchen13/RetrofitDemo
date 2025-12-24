@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace "com.example.retrofitdemo"
     compileSdk 31
 
     defaultConfig {
