@@ -4,6 +4,9 @@ import com.example.retrofitdemo.base.WanAndroidService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -20,6 +23,9 @@ public class HttpUtil {
     private static HttpUtil httpUtil = new HttpUtil();
     private static WanAndroidService wanAndroidService;
     private static Retrofit retrofit;
+    
+    // 用于执行回调的线程池（子线程）
+    private static Executor callbackExecutor;
 
     private Gson gson = new GsonBuilder()
             //配置你的Gson
@@ -28,10 +34,15 @@ public class HttpUtil {
             .create();
 
     private HttpUtil() {
+        // 创建线程池用于执行回调，这样onResponse和onFailure会在子线程中执行
+        callbackExecutor = Executors.newCachedThreadPool();
+        
         //使用Log验证是否单例生效,app使用过程中HttpUtil只初始化一次即可");
         retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.wanandroid.com/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                // 设置回调执行器为后台线程池，这样回调会在子线程执行
+                .callbackExecutor(callbackExecutor)
                 .build();
         wanAndroidService = retrofit.create(WanAndroidService.class);
     }
